@@ -28,6 +28,9 @@
     .repo-link { color: #42516c; text-decoration: none; font-size: 14px; font-weight: 650; }
     .repo-link:hover { color: var(--blue); }
     main { padding: 36px 0 56px; }
+    .loader-notice { display: flex; gap: 13px; align-items: flex-start; margin: 0 0 18px; padding: 17px 20px; border: 1px solid #f0ce75; border-left: 5px solid #e7a91e; border-radius: 14px; color: #513b08; background: #fff7df; box-shadow: 0 7px 20px #9a72100c; }
+    .notice-icon { display: grid; place-items: center; flex: none; width: 27px; height: 27px; border-radius: 50%; color: #76520a; background: #f5d87e; font-size: 16px; font-weight: 850; }
+    .loader-notice p { margin: 1px 0 0; font-size: 15px; font-weight: 750; line-height: 1.65; }
     .hero { position: relative; overflow: hidden; padding: clamp(30px, 6vw, 60px); border: 1px solid #e1e8f2; border-radius: 26px; background: linear-gradient(122deg, #fff 43%, #f0f5ff); box-shadow: 0 20px 55px #29466b0d; }
     .hero::after { position: absolute; width: 290px; height: 290px; right: -95px; top: -105px; content: ""; border: 1px solid #cbdcff; border-radius: 50%; box-shadow: 0 0 0 32px #eef4ff, 0 0 0 64px #f5f8ff; opacity: .85; pointer-events: none; }
     .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue-dark); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -85,6 +88,10 @@
     </header>
 
     <main>
+      <aside class="loader-notice" aria-label="TCRP MSHELL 로더 안내">
+        <span class="notice-icon" aria-hidden="true">!</span>
+        <p>TCRP MSHELL 로더에는 이미 자동포함되어 있습니다.<br>아직 패키지 센터에 포함되어 있지않은 경우는 로더를 재빌드 하시면 됩니다.</p>
+      </aside>
       <section class="hero" aria-labelledby="page-title">
         <div class="eyebrow">Synology Community Packages</div>
         <h1 id="page-title">패키지 센터에서<br>바로 설치하고 업데이트하세요.</h1>
