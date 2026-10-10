@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="PeterSuh-Q3의 Synology 커뮤니티 패키지를 Package Center에 등록하는 방법입니다.">
+  <title>PeterSuh-Q3 Synology Package Source</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17233b;
+      --muted: #68758c;
+      --line: #e0e7f0;
+      --blue: #2366e8;
+      --blue-dark: #174bb0;
+      --canvas: #f4f7fb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--canvas); }
+    a { color: inherit; }
+    .shell { width: min(100% - 40px, 1020px); margin: 0 auto; }
+    header { height: 78px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; font-weight: 750; letter-spacing: -.02em; }
+    .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: white; background: linear-gradient(145deg, #3784fa, #144dc2); box-shadow: 0 6px 14px #2865d52e; }
+    .mark svg { width: 22px; height: 22px; }
+    .repo-link { color: #42516c; text-decoration: none; font-size: 14px; font-weight: 650; }
+    .repo-link:hover { color: var(--blue); }
+    main { padding: 36px 0 56px; }
+    .hero { position: relative; overflow: hidden; padding: clamp(30px, 6vw, 60px); border: 1px solid #e1e8f2; border-radius: 26px; background: linear-gradient(122deg, #fff 43%, #f0f5ff); box-shadow: 0 20px 55px #29466b0d; }
+    .hero::after { position: absolute; width: 290px; height: 290px; right: -95px; top: -105px; content: ""; border: 1px solid #cbdcff; border-radius: 50%; box-shadow: 0 0 0 32px #eef4ff, 0 0 0 64px #f5f8ff; opacity: .85; pointer-events: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue-dark); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .eyebrow::before { width: 7px; height: 7px; content: ""; border-radius: 50%; background: #35b785; box-shadow: 0 0 0 4px #35b78520; }
+    h1 { max-width: 650px; margin: 18px 0 12px; font-size: clamp(32px, 5vw, 52px); line-height: 1.12; letter-spacing: -.045em; }
+    .intro { max-width: 610px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.75; }
+    .feed-box { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 18px; max-width: 650px; margin-top: 30px; padding: 15px 16px 15px 20px; border: 1px solid #dce5f1; border-radius: 14px; background: #fff; box-shadow: 0 8px 22px #2747780b; }
+    .feed-label { display: block; margin-bottom: 5px; color: #8994a7; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .feed-url { color: #213653; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: clamp(13px, 2vw, 16px); overflow-wrap: anywhere; }
+    button { flex: none; padding: 10px 14px; border: 0; border-radius: 10px; color: white; background: var(--blue); font: inherit; font-size: 13px; font-weight: 750; cursor: pointer; transition: background .15s ease, transform .15s ease; }
+    button:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    button:focus-visible, a:focus-visible { outline: 3px solid #90b5ff; outline-offset: 3px; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 18px; color: #536681; font-size: 13px; font-weight: 650; }
+    .hero-links a { text-decoration-color: #aab8ca; text-underline-offset: 4px; }
+    .hero-links a:hover { color: var(--blue); }
+    .instructions { display: grid; grid-template-columns: .72fr 1.28fr; gap: 44px; align-items: start; padding: 52px 8px 0; }
+    .section-kicker { margin: 0 0 8px; color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: 26px; letter-spacing: -.035em; }
+    .steps { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .steps li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+    .step-number { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; color: var(--blue-dark); background: #eaf1ff; font-size: 13px; font-weight: 800; }
+    .step-title { margin: 1px 0 4px; font-size: 14px; font-weight: 750; }
+    .step-detail { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .note { display: grid; grid-template-columns: 22px 1fr; gap: 12px; margin: 18px 0 0 48px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .note svg { width: 19px; height: 19px; color: #7185a2; }
+    footer { display: flex; justify-content: space-between; gap: 20px; margin-top: 52px; padding: 20px 8px 0; border-top: 1px solid var(--line); color: #8490a2; font-size: 12px; }
+    footer a { color: #536681; text-decoration: none; }
+    footer a:hover { color: var(--blue); }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 28px, 560px); }
+      header { height: 68px; }
+      .brand { font-size: 13px; }
+      .repo-link { font-size: 12px; }
+      main { padding-top: 20px; }
+      .hero { padding: 28px 22px; border-radius: 20px; }
+      .hero::after { width: 190px; height: 190px; right: -90px; top: -75px; }
+      .intro { font-size: 15px; }
+      .feed-box { align-items: stretch; flex-direction: column; gap: 12px; padding: 15px; }
+      button { width: 100%; }
+      .instructions { grid-template-columns: 1fr; gap: 22px; padding: 38px 2px 0; }
+      .note { margin-left: 0; }
+      footer { flex-direction: column; margin-top: 38px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <a class="brand" href="/" aria-label="PeterSuh-Q3 패키지 소스 홈">
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 7.4 12 3l8.5 4.4v9.2L12 21l-8.5-4.4V7.4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m3.8 7.6 8.2 4.3 8.2-4.3M12 12v8.5M8 5.1l8.4 4.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
+        <span>PeterSuh-Q3 Package Source</span>
+      </a>
+      <a class="repo-link" href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer">GitHub 저장소 ↗</a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="eyebrow">Synology Community Packages</div>
+        <h1 id="page-title">패키지 센터에서<br>바로 설치하고 업데이트하세요.</h1>
+        <p class="intro">이 주소는 브라우저용 패키지 목록이 아니라 Synology DSM 패키지 센터에 등록하는 커뮤니티 패키지 피드입니다. NAS에 아래 주소를 추가하면 호환되는 PeterSuh-Q3 패키지를 확인할 수 있습니다.</p>
+
+        <div class="feed-box">
+          <div>
+            <span class="feed-label">패키지 소스 위치</span>
+            <code class="feed-url" id="feed-url">https://nas.dante90.mmv.kr/</code>
+          </div>
+          <button type="button" id="copy-button" aria-label="패키지 소스 URL 복사">URL 복사</button>
+        </div>
+        <div class="hero-links">
+          <a href="/catalog.json">SPK 카탈로그 보기</a>
+          <a href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer">설정 및 소스 코드</a>
+        </div>
+      </section>
+
+      <section class="instructions" aria-labelledby="instructions-title">
+        <div>
+          <p class="section-kicker">빠른 등록</p>
+          <h2 id="instructions-title">DSM에 패키지 소스 추가하기</h2>
+        </div>
+        <div>
+          <ol class="steps">
+            <li><span class="step-number">1</span><div><p class="step-title">패키지 센터 열기</p><p class="step-detail">DSM 메인 메뉴에서 패키지 센터를 실행합니다.</p></div></li>
+            <li><span class="step-number">2</span><div><p class="step-title">패키지 소스 설정으로 이동</p><p class="step-detail">패키지 센터의 설정에서 <strong>패키지 소스</strong> 탭을 선택하고 추가를 누릅니다.</p></div></li>
+            <li><span class="step-number">3</span><div><p class="step-title">이름과 위치 입력</p><p class="step-detail">이름은 <strong>PeterSuh-Q3</strong>, 위치는 위의 URL을 입력한 다음 확인을 누릅니다.</p></div></li>
+            <li><span class="step-number">4</span><div><p class="step-title">커뮤니티 패키지 확인</p><p class="step-detail">패키지 센터의 <strong>커뮤니티</strong> 탭을 열면 이 소스에서 제공하는 호환 패키지가 표시됩니다.</p></div></li>
+          </ol>
+          <p class="note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 10.5v5M12 7.5h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span>SPK 파일은 각 패키지의 공개 GitHub 릴리스에서 내려받습니다. 표시되는 패키지와 빌드는 NAS 모델, CPU 아키텍처, DSM 버전에 따라 달라집니다.</span></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>PeterSuh-Q3 Synology Package Source</span>
+      <a href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer">GitHub에서 자세히 보기 ↗</a>
+    </footer>
+  </div>
+  <script>
+    const button = document.getElementById("copy-button");
+    const url = document.getElementById("feed-url").textContent;
+    button.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        button.textContent = "복사했습니다";
+      } catch {
+        button.textContent = "URL을 선택해 복사하세요";
+      }
+      window.setTimeout(() => { button.textContent = "URL 복사"; }, 2200);
+    });
+  </script>
+</body>
+</html>

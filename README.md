@@ -1,42 +1,27 @@
-# 007revad Synology Package Source
+# PeterSuh-Q3 Synology Package Source
 
-![Badge](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2F007revad%2FSynology_package_source&label=Visitors&icon=github&color=%23198754&message=&style=flat&tz=Australia%2FSydney)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/007revad)
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/007revad)
-<!--- [![committers.top badge](https://user-badge.committers.top/australia/007revad.svg)](https://user-badge.committers.top/australia/007revad) --->
+Community package feed for Synology DSM. Register this address in Package Center to browse compatible PeterSuh-Q3 packages and receive package version updates there:
 
-### Description
+**Package source:** <https://nas.dante90.mmv.kr/>
 
-007revad Synology Package Source adds DSM packages that are available from GitHub to Package Center so users can easily install packages from various GitHub developers and Package Center can update the packages when newer versions are released.
+The root URL opens a setup guide in a browser. Package Center requests the same URL with NAS model, CPU architecture, and DSM version parameters; the feed returns the newest compatible package build. SPK files are downloaded from the package publishers' public GitHub releases.
 
-### Where are the spk files?
+## Add the source in DSM
 
-- It does not host any of the spk files.
-- It just provides the information required by Package Center for Package Center to display available packages for the Synology's DSM version and CPU arch.
-- When you click Install or Upgrade in Package Center the spk file is downloaded from the package developer's GitHub repo.
-    - So all installs and upgrades count as downloads from the package developer's GitHub repo.
+1. Open **Package Center**.
+2. Open **Settings → Package Sources** and click **Add**.
+3. Enter **PeterSuh-Q3** as the name and `https://nas.dante90.mmv.kr/` as the location.
+4. Confirm, then open the **Community** page to browse packages for the NAS.
 
-### How to add the Synology Package Source to Package Center
+Synology's [Package Center guide](https://kb.synology.com/en-us/DSM/help/DSM/PkgManApp/configure?version=7) describes adding third-party package sources.
 
-1. Open Package Center and click on Settings.
-2. Click on Package Sources.
-3. Click Add.
-4. Enter `007revad` as the Name.
-5. Enter `https://spkrepo.007daver.workers.dev/` as the Location.
-6. Click OK then OK.
-7. You'll then see the available packages when you click Community on the left.
+## Catalog and source
 
-<br>
+- [SPK asset catalog](https://nas.dante90.mmv.kr/catalog.json)
+- [Source code and deployment instructions](https://github.com/PeterSuh-Q3/Synology_package_source)
 
-<p align="center">Add the package source</p>
-<p align="center"><img src="/images/pkg_source2.png"></p>
+The service filters package metadata by architecture and DSM version. A package is shown only when its SPK metadata indicates compatibility. Some SPKs do not include package icons; the feed uses embedded icons when available.
 
-<br>
+## Run the feed
 
-<p align="center">Packages from the new package source in the Community section</p>
-<p align="center"><img src="/images/packages3.png"></p>
-
-<br>
-
-<p align="center">Packages with updates available</p>
-<p align="center"><img src="/images/updateable.png"></p>
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the Synology NAS Docker and reverse proxy setup. The service is a small Python HTTP server with no third-party Python dependencies.
