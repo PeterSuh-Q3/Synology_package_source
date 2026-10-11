@@ -2,6 +2,7 @@
 """Small Synology Package Center feed backed by PeterSuh-Q3 GitHub SPKs."""
 
 import json
+import hashlib
 import os
 import re
 import threading
@@ -77,9 +78,16 @@ def feed(assets, query, base_url):
         info = asset["info"]
         icon_name = f"{package}.png"
         retina_name = f"{package}_256.png"
-        icon_version = quote(info.get("version", ""))
-        icon_url = f"{base_url}/icons/{quote(icon_name)}?v={icon_version}"
-        retina_url = f"{base_url}/icons/{quote(retina_name)}?v={icon_version}"
+        def thumbnail_url(name):
+            path = ICON_ROOT / name
+            try:
+                digest = hashlib.sha256(path.read_bytes()).hexdigest()[:16]
+            except OSError:
+                return []
+            return [f"{base_url}/icons/{quote(name)}?v={digest}"]
+
+        thumbnail = thumbnail_url(icon_name)
+        thumbnail_retina = thumbnail_url(retina_name)
         row = {
             "package": package,
             "version": info["version"],
@@ -92,8 +100,8 @@ def feed(assets, query, base_url):
             "distributor": info.get("distributor") or "PeterSuh-Q3",
             "distributor_url": info.get("distributor_url") or "https://github.com/PeterSuh-Q3",
             "deppkgs": info.get("install_dep_packages") or None,
-            "thumbnail": [icon_url] if (ICON_ROOT / icon_name).is_file() else [],
-            "thumbnail_retina": [retina_url] if (ICON_ROOT / retina_name).is_file() else [],
+            "thumbnail": thumbnail,
+            "thumbnail_retina": thumbnail_retina,
             "snapshot": [],
             "qinst": False,
             "qstart": False,
