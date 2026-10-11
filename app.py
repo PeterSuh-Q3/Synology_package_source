@@ -15,6 +15,7 @@ from urllib.parse import parse_qs, quote, urlsplit
 ROOT = Path(__file__).resolve().parent
 INVENTORY = ROOT / "data" / "assets.json"
 ICON_ROOT = ROOT / "data" / "icons"
+ASSET_ROOT = ROOT / "assets"
 LANDING_PAGE = ROOT / "landing.html"
 EXCLUDED_PACKAGES = {"Samplepackage"}  # ScriptNotify's example package.
 X64_PLATFORMS = {
@@ -129,6 +130,14 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urlsplit(self.path)
         if parsed.path == "/health":
             return self.send_body(200, "ok\n", "text/plain; charset=utf-8")
+        if parsed.path.startswith("/assets/"):
+            name = parsed.path.removeprefix("/assets/")
+            if not re.fullmatch(r"[A-Za-z0-9_.-]+\.png", name):
+                return self.send_body(404, "not found\n", "text/plain; charset=utf-8")
+            try:
+                return self.send_body(200, (ASSET_ROOT / name).read_bytes(), "image/png")
+            except OSError:
+                return self.send_body(404, "not found\n", "text/plain; charset=utf-8")
         if parsed.path.startswith("/icons/"):
             name = parsed.path.removeprefix("/icons/")
             if not re.fullmatch(r"[A-Za-z0-9_.-]+\.png", name):

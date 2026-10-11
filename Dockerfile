@@ -3,6 +3,7 @@ RUN apk add --no-cache curl ca-certificates
 WORKDIR /app
 COPY app.py ./
 COPY landing.html ./
+COPY assets ./assets
 COPY tools ./tools
 COPY data ./data
 ENV PYTHONUNBUFFERED=1 PORT=8765 SYNC_RELEASES=1
