@@ -3062,7 +3062,7 @@
     "published_at": "2026-08-19T15:29:28Z",
     "name": "syno-nvidia-driver-kver5-595.99.02-6.spk",
     "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595.99.02-6.spk",
-    "size": 933440512,
+    "size": 933441024,
     "info": {
       "package": "syno-nvidia-driver-kver5",
       "version": "595.99.02-6",
@@ -3076,7 +3076,9 @@
       "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
       "startable": "no",
       "install_dep_packages": ""
-    }
+    },
+    "md5": "adc58c6fff4df26034edc3051f6aae5e",
+    "digest": "sha256:f88f64a4d45774f45ea90e7a69f9a80e79e7396c7464cb6deabee50713a51f4a"
   },
   {
     "repo": "syno_nvidia_driver",
