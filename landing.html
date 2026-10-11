@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-language="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,12 @@
     .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; font-weight: 750; letter-spacing: -.02em; }
     .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; color: white; background: linear-gradient(145deg, #3784fa, #144dc2); box-shadow: 0 6px 14px #2865d52e; }
     .mark svg { width: 22px; height: 22px; }
+    .header-actions { display: flex; align-items: center; gap: 22px; }
+    .language-toggle { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid #dce4ef; border-radius: 10px; background: #eef2f8; }
+    .language-toggle button { padding: 6px 9px; border-radius: 7px; color: #617089; background: transparent; font-size: 12px; }
+    .language-toggle button:hover { color: var(--ink); background: #e4eaf3; transform: none; }
+    .language-toggle button[aria-pressed="true"] { color: var(--blue-dark); background: white; box-shadow: 0 1px 4px #192b4620; }
+    .lang-en[hidden], .lang-ko[hidden] { display: none !important; }
     .repo-link { color: #42516c; text-decoration: none; font-size: 14px; font-weight: 650; }
     .repo-link:hover { color: var(--blue); }
     main { padding: 36px 0 56px; }
@@ -61,8 +67,10 @@
     footer a:hover { color: var(--blue); }
     @media (max-width: 700px) {
       .shell { width: min(100% - 28px, 560px); }
-      header { height: 68px; }
-      .brand { font-size: 13px; }
+      header { height: auto; min-height: 68px; gap: 10px; flex-wrap: wrap; padding: 10px 0; }
+      .brand { gap: 8px; font-size: 12px; }
+      .header-actions { gap: 10px; }
+      .language-toggle button { width: auto; }
       .repo-link { font-size: 12px; }
       main { padding-top: 20px; }
       .hero { padding: 28px 22px; border-radius: 20px; }
@@ -80,69 +88,103 @@
 <body>
   <div class="shell">
     <header>
-      <a class="brand" href="/" aria-label="PeterSuh-Q3 패키지 소스 홈">
+      <a class="brand" href="/" aria-label="PeterSuh-Q3 Package Source">
         <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3.5 7.4 12 3l8.5 4.4v9.2L12 21l-8.5-4.4V7.4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m3.8 7.6 8.2 4.3 8.2-4.3M12 12v8.5M8 5.1l8.4 4.5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
         <span>PeterSuh-Q3 Package Source</span>
       </a>
-      <a class="repo-link" href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer">GitHub 저장소 ↗</a>
+      <div class="header-actions">
+        <div class="language-toggle" role="group" aria-label="언어 선택 / Language selection">
+          <button type="button" class="language-option" data-language-button="ko" aria-pressed="true">한글</button>
+          <button type="button" class="language-option" data-language-button="en" aria-pressed="false">English</button>
+        </div>
+        <a class="repo-link" href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer"><span class="lang-ko">GitHub 저장소 ↗</span><span class="lang-en" lang="en" hidden>GitHub repository ↗</span></a>
+      </div>
     </header>
 
     <main>
       <aside class="loader-notice" aria-label="TCRP MSHELL 로더 안내">
         <span class="notice-icon" aria-hidden="true">!</span>
-        <p>TCRP MSHELL 로더에는 이미 자동포함되어 있습니다.<br>아직 패키지 센터에 포함되어 있지않은 경우는 로더를 재빌드 하시면 됩니다.</p>
+        <p><span class="lang-ko">TCRP MSHELL 로더에는 이미 자동포함되어 있습니다.<br>아직 패키지 센터에 포함되어 있지않은 경우는 로더를 재빌드 하시면 됩니다.</span><span class="lang-en" lang="en" hidden>This is already included automatically in the TCRP MSHELL loader.<br>If it does not appear in Package Center yet, rebuild the loader.</span></p>
       </aside>
       <section class="hero" aria-labelledby="page-title">
-        <div class="eyebrow">Synology Community Packages</div>
-        <h1 id="page-title">패키지 센터에서<br>바로 설치하고 업데이트하세요.</h1>
-        <p class="intro">이 주소는 브라우저용 패키지 목록이 아니라 Synology DSM 패키지 센터에 등록하는 커뮤니티 패키지 피드입니다. NAS에 아래 주소를 추가하면 호환되는 PeterSuh-Q3 패키지를 확인할 수 있습니다.</p>
+        <div class="eyebrow"><span class="lang-ko">Synology 커뮤니티 패키지</span><span class="lang-en" lang="en" hidden>Synology Community Packages</span></div>
+        <h1 id="page-title"><span class="lang-ko">패키지 센터에서<br>바로 설치하고 업데이트하세요.</span><span class="lang-en" lang="en" hidden>Install and update<br>packages in Package Center.</span></h1>
+        <p class="intro"><span class="lang-ko">이 주소는 브라우저용 패키지 목록이 아니라 Synology DSM 패키지 센터에 등록하는 커뮤니티 패키지 피드입니다. NAS에 아래 주소를 추가하면 호환되는 PeterSuh-Q3 패키지를 확인할 수 있습니다.</span><span class="lang-en" lang="en" hidden>This URL is a community package feed for Synology DSM Package Center, not a package list to browse. Add it to your NAS to see PeterSuh-Q3 packages compatible with your system.</span></p>
 
         <div class="feed-box">
           <div>
-            <span class="feed-label">패키지 소스 위치</span>
+            <span class="feed-label"><span class="lang-ko">패키지 소스 위치</span><span class="lang-en" lang="en" hidden>Package source URL</span></span>
             <code class="feed-url" id="feed-url">https://nas.dante90.mmv.kr/</code>
           </div>
-          <button type="button" id="copy-button" aria-label="패키지 소스 URL 복사">URL 복사</button>
+          <button type="button" id="copy-button" aria-label="패키지 소스 URL 복사" data-label-ko="패키지 소스 URL 복사" data-label-en="Copy package source URL"><span class="lang-ko">URL 복사</span><span class="lang-en" lang="en" hidden>Copy URL</span></button>
         </div>
         <div class="hero-links">
-          <a href="/catalog.json">SPK 카탈로그 보기</a>
-          <a href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer">설정 및 소스 코드</a>
+          <a href="/catalog.json"><span class="lang-ko">SPK 카탈로그 보기</span><span class="lang-en" lang="en" hidden>Browse SPK catalog</span></a>
+          <a href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer"><span class="lang-ko">설정 및 소스 코드</span><span class="lang-en" lang="en" hidden>Setup and source code</span></a>
         </div>
       </section>
 
       <section class="instructions" aria-labelledby="instructions-title">
         <div>
-          <p class="section-kicker">빠른 등록</p>
-          <h2 id="instructions-title">DSM에 패키지 소스 추가하기</h2>
+          <p class="section-kicker"><span class="lang-ko">빠른 등록</span><span class="lang-en" lang="en" hidden>Quick setup</span></p>
+          <h2 id="instructions-title"><span class="lang-ko">DSM에 패키지 소스 추가하기</span><span class="lang-en" lang="en" hidden>Add the package source to DSM</span></h2>
         </div>
         <div>
           <ol class="steps">
-            <li><span class="step-number">1</span><div><p class="step-title">패키지 센터 열기</p><p class="step-detail">DSM 메인 메뉴에서 패키지 센터를 실행합니다.</p></div></li>
-            <li><span class="step-number">2</span><div><p class="step-title">패키지 소스 설정으로 이동</p><p class="step-detail">패키지 센터의 설정에서 <strong>패키지 소스</strong> 탭을 선택하고 추가를 누릅니다.</p></div></li>
-            <li><span class="step-number">3</span><div><p class="step-title">이름과 위치 입력</p><p class="step-detail">이름은 <strong>PeterSuh-Q3</strong>, 위치는 위의 URL을 입력한 다음 확인을 누릅니다.</p></div></li>
-            <li><span class="step-number">4</span><div><p class="step-title">커뮤니티 패키지 확인</p><p class="step-detail">패키지 센터의 <strong>커뮤니티</strong> 탭을 열면 이 소스에서 제공하는 호환 패키지가 표시됩니다.</p></div></li>
+            <li><span class="step-number">1</span><div><p class="step-title"><span class="lang-ko">패키지 센터 열기</span><span class="lang-en" lang="en" hidden>Open Package Center</span></p><p class="step-detail"><span class="lang-ko">DSM 메인 메뉴에서 패키지 센터를 실행합니다.</span><span class="lang-en" lang="en" hidden>Open Package Center from the DSM main menu.</span></p></div></li>
+            <li><span class="step-number">2</span><div><p class="step-title"><span class="lang-ko">패키지 소스 설정으로 이동</span><span class="lang-en" lang="en" hidden>Open Package Sources</span></p><p class="step-detail"><span class="lang-ko">패키지 센터의 설정에서 <strong>패키지 소스</strong> 탭을 선택하고 추가를 누릅니다.</span><span class="lang-en" lang="en" hidden>In Settings, select the <strong>Package Sources</strong> tab and click <strong>Add</strong>.</span></p></div></li>
+            <li><span class="step-number">3</span><div><p class="step-title"><span class="lang-ko">이름과 위치 입력</span><span class="lang-en" lang="en" hidden>Enter the name and URL</span></p><p class="step-detail"><span class="lang-ko">이름은 <strong>PeterSuh-Q3</strong>, 위치는 위의 URL을 입력한 다음 확인을 누릅니다.</span><span class="lang-en" lang="en" hidden>Enter <strong>PeterSuh-Q3</strong> as the name and the URL above as the location, then click <strong>OK</strong>.</span></p></div></li>
+            <li><span class="step-number">4</span><div><p class="step-title"><span class="lang-ko">커뮤니티 패키지 확인</span><span class="lang-en" lang="en" hidden>Browse community packages</span></p><p class="step-detail"><span class="lang-ko">패키지 센터의 <strong>커뮤니티</strong> 탭을 열면 이 소스에서 제공하는 호환 패키지가 표시됩니다.</span><span class="lang-en" lang="en" hidden>Open the <strong>Community</strong> tab in Package Center to see compatible packages from this source.</span></p></div></li>
           </ol>
-          <p class="note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 10.5v5M12 7.5h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span>SPK 파일은 각 패키지의 공개 GitHub 릴리스에서 내려받습니다. 표시되는 패키지와 빌드는 NAS 모델, CPU 아키텍처, DSM 버전에 따라 달라집니다.</span></p>
+          <p class="note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 10.5v5M12 7.5h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span><span class="lang-ko">SPK 파일은 각 패키지의 공개 GitHub 릴리스에서 내려받습니다. 표시되는 패키지와 빌드는 NAS 모델, CPU 아키텍처, DSM 버전에 따라 달라집니다.</span><span class="lang-en" lang="en" hidden>SPK files are downloaded from each package's public GitHub releases. Available packages and builds depend on your NAS model, CPU architecture, and DSM version.</span></span></p>
         </div>
       </section>
     </main>
 
     <footer>
       <span>PeterSuh-Q3 Synology Package Source</span>
-      <a href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer">GitHub에서 자세히 보기 ↗</a>
+      <a href="https://github.com/PeterSuh-Q3/Synology_package_source" target="_blank" rel="noopener noreferrer"><span class="lang-ko">GitHub에서 자세히 보기 ↗</span><span class="lang-en" lang="en" hidden>Learn more on GitHub ↗</span></a>
     </footer>
   </div>
   <script>
     const button = document.getElementById("copy-button");
     const url = document.getElementById("feed-url").textContent;
+    const languageButtons = document.querySelectorAll("[data-language-button]");
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+      document.documentElement.dataset.language = language;
+      document.querySelectorAll(".lang-ko, .lang-en").forEach((element) => {
+        element.hidden = !element.classList.contains(`lang-${language}`);
+      });
+      languageButtons.forEach((option) => {
+        option.setAttribute("aria-pressed", String(option.dataset.languageButton === language));
+      });
+      document.querySelector(".loader-notice").setAttribute("aria-label", language === "ko" ? "TCRP MSHELL 로더 안내" : "TCRP MSHELL loader notice");
+      document.querySelector('meta[name="description"]').content = language === "ko"
+        ? "PeterSuh-Q3의 Synology 커뮤니티 패키지를 Package Center에 등록하는 방법입니다."
+        : "How to add PeterSuh-Q3 Synology community packages to Package Center.";
+      button.setAttribute("aria-label", language === "ko" ? button.dataset.labelKo : button.dataset.labelEn);
+      button.dataset.copied = "false";
+      button.querySelector(".lang-ko").textContent = "URL 복사";
+      button.querySelector(".lang-en").textContent = "Copy URL";
+    }
+    languageButtons.forEach((option) => option.addEventListener("click", () => setLanguage(option.dataset.languageButton)));
     button.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(url);
-        button.textContent = "복사했습니다";
+        button.dataset.copied = "true";
+        button.querySelector(`.lang-${document.documentElement.lang}`).textContent = document.documentElement.lang === "ko" ? "복사했습니다" : "Copied";
       } catch {
-        button.textContent = "URL을 선택해 복사하세요";
+        button.dataset.copied = "true";
+        button.querySelector(`.lang-${document.documentElement.lang}`).textContent = document.documentElement.lang === "ko" ? "URL을 선택해 복사하세요" : "Select and copy the URL";
       }
-      window.setTimeout(() => { button.textContent = "URL 복사"; }, 2200);
+      window.setTimeout(() => {
+        if (button.dataset.copied === "true") {
+          button.dataset.copied = "false";
+          button.querySelector(".lang-ko").textContent = "URL 복사";
+          button.querySelector(".lang-en").textContent = "Copy URL";
+        }
+      }, 2200);
     });
   </script>
 </body>
