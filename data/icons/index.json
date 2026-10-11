@@ -25,18 +25,18 @@
     "missing_icon": false
   },
   "synology-amd-gpu-monitor": {
-    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.09.28/synology-amd-gpu-monitor-0.4.4-x86_64.spk",
-    "version": "0.4.4",
-    "missing_icon": true
+    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.10.11/synology-amd-gpu-monitor-0.4.5-x86_64.spk",
+    "version": "0.4.5",
+    "missing_icon": false
   },
   "synology-intel-gpu-monitor": {
-    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.09.28/synology-intel-gpu-monitor-0.3.2-x86_64.spk",
-    "version": "0.3.2",
-    "missing_icon": true
+    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.10.11/synology-intel-gpu-monitor-0.3.3-x86_64.spk",
+    "version": "0.3.3",
+    "missing_icon": false
   },
   "syno-nvidia-gpu-monitor": {
-    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.09.28/syno-nvidia-gpu-monitor-0.6.5-x86_64.spk",
-    "version": "0.6.5",
+    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.10.11/syno-nvidia-gpu-monitor-0.6.6-x86_64.spk",
+    "version": "0.6.6",
     "missing_icon": false
   },
   "syno-intel-gpu-top": {
