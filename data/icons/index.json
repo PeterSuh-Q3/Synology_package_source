@@ -10,8 +10,8 @@
     "missing_icon": false
   },
   "Samplepackage": {
-    "url": "https://github.com/PeterSuh-Q3/ScriptNotify/releases/download/v1.0.1/Samplepackage-x86_64-1.0.0-7.2.spk",
-    "version": "1.0.0",
+    "url": "https://github.com/PeterSuh-Q3/ScriptNotify/releases/download/v1.0.2/Samplepackage-x86_64-1.0.1-7.2.spk",
+    "version": "1.0.1",
     "missing_icon": false
   },
   "syno-amdgpu-runtime": {
@@ -20,8 +20,8 @@
     "missing_icon": false
   },
   "syno-amdgpu-top": {
-    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top/releases/download/v0.1.4/syno-amdgpu-top-0.1.4-x86_64.spk",
-    "version": "0.1.4",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top/releases/download/v0.1.5/syno-amdgpu-top-0.1.5-x86_64.spk",
+    "version": "0.1.5",
     "missing_icon": false
   },
   "synology-amd-gpu-monitor": {
@@ -40,8 +40,8 @@
     "missing_icon": false
   },
   "syno-intel-gpu-top": {
-    "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.5/syno-intel-gpu-top-0.1.5-x86_64.spk",
-    "version": "0.1.5",
+    "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.6/syno-intel-gpu-top-0.1.6-x86_64.spk",
+    "version": "0.1.6",
     "missing_icon": false
   },
   "Synosmartinfo": {
@@ -50,28 +50,28 @@
     "missing_icon": false
   },
   "syno-nvidia-container-runtime": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-container-runtime-1.19.1-4-x86_64.spk",
-    "version": "1.19.1-4",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-container-runtime-1.19.1-5-x86_64.spk",
+    "version": "1.19.1-5",
     "missing_icon": false
   },
   "syno-nvidia-driver-kver4-dsm70": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm70-550.163.01-3-dsm7.0-7.1.spk",
-    "version": "550.163.01-3",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm70-550.163.01-4-dsm7.0-7.1.spk",
+    "version": "550.163.01-4",
     "missing_icon": false
   },
   "syno-nvidia-driver-kver4-dsm72": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm72-550.163.01-3-dsm7.2-7.4.spk",
-    "version": "550.163.01-3",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm72-550.163.01-4-dsm7.2-7.4.spk",
+    "version": "550.163.01-4",
     "missing_icon": false
   },
   "syno-nvidia-driver-kver5": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595.99.02-5.spk",
-    "version": "595.99.02-5",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595.99.02-6.spk",
+    "version": "595.99.02-6",
     "missing_icon": false
   },
   "syno-nvidia-ffmpeg": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg-595.99.02-2-x86_64.spk",
-    "version": "595.99.02-2",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg-595.99.02-3-x86_64.spk",
+    "version": "595.99.02-3",
     "missing_icon": false
   }
 }

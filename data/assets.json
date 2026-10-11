@@ -3099,5 +3099,248 @@
       "startable": "no",
       "install_dep_packages": ""
     }
+  },
+  {
+    "repo": "syno-amdgpu-top",
+    "tag": "v0.1.5",
+    "published_at": "2026-10-11T05:38:58Z",
+    "name": "syno-amdgpu-top-0.1.5-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top/releases/download/v0.1.5/syno-amdgpu-top-0.1.5-x86_64.spk",
+    "size": 9099264,
+    "info": {
+      "package": "syno-amdgpu-top",
+      "version": "0.1.5",
+      "displayname": "Synology AMDGPU Top",
+      "description": "Standalone native x86_64 amdgpu_top GPU monitor for supported DSM platforms (no Mesa/VA-API runtime).",
+      "arch": "apollolake avoton braswell broadwell broadwellnk broadwellnkv2 broadwellntbap bromolow denverton epyc7002 epyc7003 epyc7003ntb geminilake geminilakenk icelaked kvmx64 purley r1000 r1000nk v1000 v1000nk",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno-intel-gpu-top",
+    "tag": "v0.1.6",
+    "published_at": "2026-10-11T05:38:56Z",
+    "name": "syno-intel-gpu-top-0.1.6-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.6/syno-intel-gpu-top-0.1.6-x86_64.spk",
+    "size": 419840,
+    "info": {
+      "package": "syno-intel-gpu-top",
+      "version": "0.1.6",
+      "displayname": "Synology Intel GPU Top",
+      "description": "Standalone Intel i915 GPU monitor for DSM.",
+      "arch": "apollolake avoton braswell broadwell broadwellnk broadwellnkv2 broadwellntbap bromolow denverton epyc7002 epyc7003 epyc7003ntb geminilake geminilakenk icelaked kvmx64 purley r1000 r1000nk v1000 v1000nk",
+      "os_min_ver": "7.4-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-container-runtime-1.19.1-5-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-container-runtime-1.19.1-5-x86_64.spk",
+    "size": 10978816,
+    "info": {
+      "package": "syno-nvidia-container-runtime",
+      "version": "1.19.1-5",
+      "displayname": "Synology NVIDIA Container Runtime",
+      "description": "NVIDIA Container Runtime for Synology Container Manager. Requires an active NVIDIA driver/runtime library. DSM seccomp limitations require a less-restricted ldconfig hook.",
+      "arch": "x86_64",
+      "os_min_ver": "7.0-00000",
+      "os_max_ver": "9.9-99999",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-driver-kver4-dsm70-550.163.01-4-dsm7.0-7.1.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm70-550.163.01-4-dsm7.0-7.1.spk",
+    "size": 558587392,
+    "info": {
+      "package": "syno-nvidia-driver-kver4-dsm70",
+      "version": "550.163.01-4",
+      "displayname": "Synology NVIDIA Driver",
+      "description": "NVIDIA driver (kernel 4.4.180, DSM 7.0-7.1, driver 550.163.01). Bundled offline for: apollolake broadwell broadwellnk broadwellnkv2 broadwellntbap geminilake purley r1000 v1000.",
+      "arch": "apollolake broadwell broadwellnk broadwellnkv2 broadwellntbap geminilake purley r1000 v1000",
+      "os_min_ver": "7.0-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-driver-kver4-dsm72-550.163.01-4-dsm7.2-7.4.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm72-550.163.01-4-dsm7.2-7.4.spk",
+    "size": 558544896,
+    "info": {
+      "package": "syno-nvidia-driver-kver4-dsm72",
+      "version": "550.163.01-4",
+      "displayname": "Synology NVIDIA Driver",
+      "description": "NVIDIA driver (kernel 4.4.302, DSM 7.2-7.4, driver 550.163.01). Bundled offline for: apollolake broadwell broadwellnk broadwellnkv2 broadwellntbap geminilake purley r1000 v1000.",
+      "arch": "apollolake broadwell broadwellnk broadwellnkv2 broadwellntbap geminilake purley r1000 v1000",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-driver-kver5-580.173.02-5.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-580.173.02-5.spk",
+    "size": 983878144,
+    "info": {
+      "package": "syno-nvidia-driver-kver5",
+      "version": "580.173.02-5",
+      "displayname": "Synology NVIDIA Driver",
+      "description": "NVIDIA driver (kernel 5.10.55 platforms, driver 580.173.02). Bundled offline for: epyc7002 epyc7003 epyc7003ntb geminilakenk icelaked r1000nk v1000nk.",
+      "arch": "epyc7002 epyc7003 epyc7003ntb geminilakenk icelaked r1000nk v1000nk",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-driver-kver5-595.99.02-6.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595.99.02-6.spk",
+    "size": 933440512,
+    "info": {
+      "package": "syno-nvidia-driver-kver5",
+      "version": "595.99.02-6",
+      "displayname": "Synology NVIDIA Driver",
+      "description": "NVIDIA driver (kernel 5.10.55 platforms, driver 595.99.02). Bundled offline for: epyc7002 epyc7003 epyc7003ntb geminilakenk icelaked r1000nk v1000nk.",
+      "arch": "epyc7002 epyc7003 epyc7003ntb geminilakenk icelaked r1000nk v1000nk",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-ffmpeg-550.163.01-3-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg-550.163.01-3-x86_64.spk",
+    "size": 78443520,
+    "info": {
+      "package": "syno-nvidia-ffmpeg",
+      "version": "550.163.01-3",
+      "displayname": "Synology NVIDIA FFmpeg",
+      "description": "Jellyfin FFmpeg and FFprobe with NVIDIA NVENC support for driver 550.163.01.",
+      "arch": "x86_64",
+      "os_min_ver": "7.0-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-ffmpeg-580.173.02-3-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg-580.173.02-3-x86_64.spk",
+    "size": 81934336,
+    "info": {
+      "package": "syno-nvidia-ffmpeg",
+      "version": "580.173.02-3",
+      "displayname": "Synology NVIDIA FFmpeg",
+      "description": "Jellyfin FFmpeg and FFprobe with NVIDIA NVENC support for driver 580.173.02.",
+      "arch": "x86_64",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-ffmpeg-595.99.02-3-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg-595.99.02-3-x86_64.spk",
+    "size": 84018688,
+    "info": {
+      "package": "syno-nvidia-ffmpeg",
+      "version": "595.99.02-3",
+      "displayname": "Synology NVIDIA FFmpeg",
+      "description": "Jellyfin FFmpeg and FFprobe with NVIDIA NVENC support for driver 595.99.02.",
+      "arch": "x86_64",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "ScriptNotify",
+    "tag": "v1.0.2",
+    "published_at": "2026-10-11T05:38:55Z",
+    "name": "Samplepackage-x86_64-1.0.1-7.2.spk",
+    "url": "https://github.com/PeterSuh-Q3/ScriptNotify/releases/download/v1.0.2/Samplepackage-x86_64-1.0.1-7.2.spk",
+    "size": 81920,
+    "info": {
+      "package": "Samplepackage",
+      "version": "1.0.1",
+      "description": "Sample Package",
+      "maintainer": "You",
+      "maintainer_url": "https://github.com/You",
+      "distributor": "You",
+      "distributor_url": "https://github.com/You/SamplePackage",
+      "os_min_ver": "7.0-40337",
+      "os_max_ver": "7.2-99999",
+      "arch": "x86_64",
+      "displayname": "Sample Package",
+      "install_dep_packages": ""
+    }
   }
 ]
