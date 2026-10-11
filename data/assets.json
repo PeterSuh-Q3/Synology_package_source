@@ -3032,5 +3032,49 @@
       "startable": "no",
       "install_dep_packages": ""
     }
+  },
+  {
+    "repo": "syno-amdgpu-top",
+    "tag": "v0.1.4",
+    "published_at": "2026-10-11T02:19:20Z",
+    "name": "syno-amdgpu-top-0.1.4-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top/releases/download/v0.1.4/syno-amdgpu-top-0.1.4-x86_64.spk",
+    "size": 9103360,
+    "info": {
+      "package": "syno-amdgpu-top",
+      "version": "0.1.4",
+      "displayname": "Synology AMDGPU Top",
+      "description": "Standalone native x86_64 amdgpu_top GPU monitor for supported DSM platforms (no Mesa/VA-API runtime).",
+      "arch": "apollolake avoton braswell broadwell broadwellnk broadwellnkv2 broadwellntbap bromolow denverton epyc7002 epyc7003 epyc7003ntb geminilake geminilakenk icelaked kvmx64 purley r1000 r1000nk v1000 v1000nk",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
+  },
+  {
+    "repo": "syno-intel-gpu-top",
+    "tag": "v0.1.5",
+    "published_at": "2026-10-11T02:19:20Z",
+    "name": "syno-intel-gpu-top-0.1.5-x86_64.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.5/syno-intel-gpu-top-0.1.5-x86_64.spk",
+    "size": 419840,
+    "info": {
+      "package": "syno-intel-gpu-top",
+      "version": "0.1.5",
+      "displayname": "Synology Intel GPU Top",
+      "description": "Standalone Intel i915 GPU monitor for DSM.",
+      "arch": "apollolake avoton braswell broadwell broadwellnk broadwellnkv2 broadwellntbap bromolow denverton epyc7002 epyc7003 epyc7003ntb geminilake geminilakenk icelaked kvmx64 purley r1000 r1000nk v1000 v1000nk",
+      "os_min_ver": "7.4-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top",
+      "startable": "no",
+      "install_dep_packages": ""
+    }
   }
 ]

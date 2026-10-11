@@ -20,8 +20,8 @@
     "missing_icon": false
   },
   "syno-amdgpu-top": {
-    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top/releases/download/v0.1.3/syno-amdgpu-top-0.1.3-x86_64.spk",
-    "version": "0.1.3",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-top/releases/download/v0.1.4/syno-amdgpu-top-0.1.4-x86_64.spk",
+    "version": "0.1.4",
     "missing_icon": false
   },
   "synology-amd-gpu-monitor": {
@@ -40,8 +40,8 @@
     "missing_icon": false
   },
   "syno-intel-gpu-top": {
-    "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.4/syno-intel-gpu-top-0.1.4-x86_64.spk",
-    "version": "0.1.4",
+    "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.5/syno-intel-gpu-top-0.1.5-x86_64.spk",
+    "version": "0.1.5",
     "missing_icon": false
   },
   "Synosmartinfo": {
