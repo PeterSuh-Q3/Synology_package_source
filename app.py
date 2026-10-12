@@ -17,6 +17,7 @@ INVENTORY = ROOT / "data" / "assets.json"
 ICON_ROOT = ROOT / "data" / "icons"
 ASSET_ROOT = ROOT / "assets"
 LANDING_PAGE = ROOT / "landing.html"
+CATALOG_PAGE = ROOT / "catalog.html"
 EXCLUDED_PACKAGES = {"Samplepackage"}  # ScriptNotify's example package.
 X64_PLATFORMS = {
     "apollolake", "avoton", "braswell", "broadwell", "broadwellnk",
@@ -153,10 +154,19 @@ class Handler(BaseHTTPRequestHandler):
         if parsed.path == "/catalog.json":
             rows = [{"repo": a["repo"], "name": a["name"], "url": a["url"],
                      "package": a.get("info", {}).get("package"),
-                     "version": a.get("info", {}).get("version")}
+                     "displayname": a.get("info", {}).get("displayname"),
+                     "version": a.get("info", {}).get("version"),
+                     "download_count": a.get("download_count"),
+                     "size": a.get("size")}
                     for a in assets]
             return self.send_body(200, json.dumps({"assets": rows}, ensure_ascii=False),
                                   "application/json; charset=utf-8")
+        if parsed.path == "/catalog":
+            try:
+                body = CATALOG_PAGE.read_bytes()
+            except OSError:
+                return self.send_body(503, "catalog page unavailable\n", "text/plain; charset=utf-8")
+            return self.send_body(200, body, "text/html; charset=utf-8")
         if parsed.path != "/":
             return self.send_body(404, "not found\n", "text/plain; charset=utf-8")
         query = parse_qs(parsed.query)

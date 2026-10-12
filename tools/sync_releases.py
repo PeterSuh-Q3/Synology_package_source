@@ -38,6 +38,8 @@ def sync():
     existing = json.loads(TARGET.read_text())
     by_url = {item["url"]: item for item in existing}
     added = 0
+    counts_updated = 0
+    changed = False
     for repo in REPOS:
         for release in github_releases(repo):
             if release.get("draft") or release.get("prerelease"):
@@ -46,7 +48,13 @@ def sync():
                 if not asset["name"].lower().endswith(".spk"):
                     continue
                 url = asset["browser_download_url"]
-                if url in by_url:
+                download_count = asset.get("download_count")
+                current = by_url.get(url)
+                if current is not None:
+                    if isinstance(download_count, int) and current.get("download_count") != download_count:
+                        current["download_count"] = download_count
+                        counts_updated += 1
+                        changed = True
                     continue
                 record = read_info({
                     "repo": repo, "tag": release["tag_name"],
@@ -56,9 +64,12 @@ def sync():
                 if "info" not in record:
                     print(f"skipping {repo}/{asset['name']}: {record.get('error')}", flush=True)
                     continue
+                if isinstance(download_count, int):
+                    record["download_count"] = download_count
                 by_url[url] = record
                 added += 1
-    if added:
+                changed = True
+    if changed:
         TARGET.parent.mkdir(exist_ok=True)
         fd, temporary = tempfile.mkstemp(prefix="assets-", suffix=".json", dir=TARGET.parent)
         try:
@@ -69,7 +80,8 @@ def sync():
         finally:
             if os.path.exists(temporary):
                 os.unlink(temporary)
-    print(f"release sync complete: {added} new SPKs, {len(by_url)} total", flush=True)
+    print(f"release sync complete: {added} new SPKs, {counts_updated} download counts updated, "
+          f"{len(by_url)} total", flush=True)
 
 
 if __name__ == "__main__":

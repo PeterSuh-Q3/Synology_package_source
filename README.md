@@ -17,10 +17,12 @@ Synology's [Package Center guide](https://kb.synology.com/en-us/DSM/help/DSM/Pkg
 
 ## Catalog and source
 
-- [SPK asset catalog](https://nas.dante90.mmv.kr/catalog.json)
+- [Package download counts](https://nas.dante90.mmv.kr/catalog)
+- [SPK catalog data (JSON)](https://nas.dante90.mmv.kr/catalog.json)
 - [Source code and deployment instructions](https://github.com/PeterSuh-Q3/Synology_package_source)
 
 The service filters package metadata by architecture and DSM version. A package is shown only when its SPK metadata indicates compatibility. Some SPKs do not include package icons; the feed uses embedded icons when available.
+Download counts are GitHub release asset totals, refreshed by the six-hour release sync. They count downloads per SPK file, not unique users or completed installations.
 
 ## Run the feed
 

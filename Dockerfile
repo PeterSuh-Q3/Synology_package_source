@@ -3,6 +3,7 @@ RUN apk add --no-cache curl ca-certificates
 WORKDIR /app
 COPY app.py ./
 COPY landing.html ./
+COPY catalog.html ./
 COPY assets ./assets
 COPY tools ./tools
 COPY data ./data

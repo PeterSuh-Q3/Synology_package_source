@@ -6,7 +6,7 @@ by the SPK's `INFO` package ID, version, architecture, and DSM version.
 
 ## NAS deployment
 
-Copy `app.py`, `landing.html`, `tools/`, `data/`, `Dockerfile`, and
+Copy `app.py`, `landing.html`, `catalog.html`, `tools/`, `data/`, `Dockerfile`, and
 `compose.yaml` to a shared folder on the NAS. In that directory run
 `docker compose up -d --build`.
 The container listens on the NAS loopback interface at port 8765. Its health
@@ -22,11 +22,13 @@ The feed endpoint is `/` with DSM query parameters, for example:
 
 `/?arch=epyc7002&major=7&minor=4&build=72806&language=enu`
 
-The root URL without DSM parameters shows setup instructions. `/catalog.json`
-lists all discovered SPK assets. The service refreshes releases every six
-hours using the public GitHub API and reads new SPK metadata with HTTP Range
-requests. The example `Samplepackage` is deliberately excluded from the DSM
-feed. Its release remains visible in `/catalog.json`.
+The root URL without DSM parameters shows setup instructions. `/catalog`
+lists SPK assets with their GitHub download counts; `/catalog.json` provides
+the same catalog as JSON. The service refreshes releases and asset download
+counts every six hours using the public GitHub API and reads new SPK metadata
+with HTTP Range requests. Counts are per GitHub release asset, not unique
+users or completed installations. The example `Samplepackage` is deliberately
+excluded from the DSM feed. Its release remains visible in the catalog.
 
 The initial catalog was generated from all 115 public repositories on the
 PeterSuh-Q3 GitHub account on 2026-10-10. It found 134 SPK assets in nine
