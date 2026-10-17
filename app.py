@@ -97,6 +97,7 @@ def feed(assets, query, base_url):
             "desc": info.get("description") or package,
             "link": asset["url"],
             "size": asset["size"],
+            "download_count": asset.get("download_count", 0),
             "maintainer": info.get("maintainer") or "PeterSuh-Q3",
             "maintainer_url": info.get("maintainer_url") or "https://github.com/PeterSuh-Q3",
             "distributor": info.get("distributor") or "PeterSuh-Q3",
