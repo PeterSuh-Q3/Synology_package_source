@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = {
-    "package", "version", "description", "displayname", "maintainer",
+    "package", "version", "description", "description_enu", "description_krn", "displayname", "maintainer",
     "maintainer_url", "distributor", "distributor_url", "arch",
     "os_min_ver", "os_max_ver", "install_dep_packages", "startable",
     "silent_upgrade", "auto_upgrade_from",

@@ -76,6 +76,8 @@ def feed(assets, query, base_url):
         ):
             chosen[package] = asset
     packages = []
+    language = (query.get("language", ["enu"])[0] or "enu").lower()
+    description_field = {"krn": "description_krn", "enu": "description_enu"}.get(language, "description_enu")
     for package, asset in sorted(chosen.items()):
         info = asset["info"]
         icon_name = f"{package}.png"
@@ -94,7 +96,7 @@ def feed(assets, query, base_url):
             "package": package,
             "version": info["version"],
             "dname": info.get("displayname") or package,
-            "desc": info.get("description") or package,
+            "desc": info.get(description_field) or info.get("description_enu") or info.get("description") or package,
             "link": asset["url"],
             "size": asset["size"],
             "download_count": asset.get("download_count", 0),

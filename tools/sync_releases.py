@@ -5,6 +5,7 @@ import json
 import os
 import subprocess
 import tempfile
+import sys
 from pathlib import Path
 
 from tools.build_inventory import read_info
@@ -12,6 +13,7 @@ from tools.build_inventory import read_info
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = ROOT / "data" / "assets.json"
+NVIDIA_ALLOWLIST = ROOT / "data" / "nvidia-packages.json"
 REPOS = (
     "ChangePanelSize", "mshell-manager-rel", "ScriptNotify",
     "syno-amdgpu-driver", "syno-amdgpu-top", "syno-gpu-monitor",
@@ -36,17 +38,28 @@ def github_releases(repo):
 
 def sync():
     existing = json.loads(TARGET.read_text())
+    nvidia_expected = json.loads(NVIDIA_ALLOWLIST.read_text())
     by_url = {item["url"]: item for item in existing}
     added = 0
     counts_updated = 0
     changed = False
-    for repo in REPOS:
+    selected_repos = ("syno-gpu-monitor", "syno_nvidia_driver") if "--nvidia-only" in sys.argv[1:] else REPOS
+    for repo in selected_repos:
         for release in github_releases(repo):
             if release.get("draft") or release.get("prerelease"):
                 continue
             for asset in release.get("assets", []):
                 if not asset["name"].lower().endswith(".spk"):
                     continue
+                if repo in {"syno_nvidia_driver", "syno-gpu-monitor"}:
+                    allowed_name = any(
+                        details["repo"] == repo and
+                        asset["name"].startswith(f"{package_id}-{details['version']}") and
+                        asset["name"][len(f"{package_id}-{details['version']}"):].startswith(("-", "."))
+                        for package_id, details in nvidia_expected.items()
+                    )
+                    if not allowed_name:
+                        continue
                 url = asset["browser_download_url"]
                 download_count = asset.get("download_count")
                 current = by_url.get(url)
@@ -69,19 +82,38 @@ def sync():
                 by_url[url] = record
                 added += 1
                 changed = True
+    # Keep the NVIDIA catalog aligned with the explicitly maintained current
+    # package-ID/version set. Old unsplit IDs and superseded revisions must not
+    # reappear merely because their historical GitHub releases still exist.
+    current_nvidia = {
+        (package_id, details["version"], details["repo"])
+        for package_id, details in nvidia_expected.items()
+    }
+    filtered = []
+    removed = 0
+    for record in by_url.values():
+        info = record.get("info") or {}
+        package_id = info.get("package", "")
+        if package_id.startswith("syno-nvidia-"):
+            key = (package_id, info.get("version"), record.get("repo"))
+            if key not in current_nvidia:
+                removed += 1
+                changed = True
+                continue
+        filtered.append(record)
     if changed:
         TARGET.parent.mkdir(exist_ok=True)
         fd, temporary = tempfile.mkstemp(prefix="assets-", suffix=".json", dir=TARGET.parent)
         try:
             with os.fdopen(fd, "w") as stream:
-                json.dump(list(by_url.values()), stream, ensure_ascii=False, indent=2)
+                json.dump(filtered, stream, ensure_ascii=False, indent=2)
                 stream.write("\n")
             os.replace(temporary, TARGET)
         finally:
             if os.path.exists(temporary):
                 os.unlink(temporary)
     print(f"release sync complete: {added} new SPKs, {counts_updated} download counts updated, "
-          f"{len(by_url)} total", flush=True)
+          f"{removed} obsolete NVIDIA records removed, {len(filtered)} total", flush=True)
 
 
 if __name__ == "__main__":

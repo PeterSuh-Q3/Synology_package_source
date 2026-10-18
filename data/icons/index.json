@@ -34,11 +34,6 @@
     "version": "0.3.3",
     "missing_icon": false
   },
-  "syno-nvidia-gpu-monitor": {
-    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.10.11/syno-nvidia-gpu-monitor-0.6.6-x86_64.spk",
-    "version": "0.6.6",
-    "missing_icon": false
-  },
   "syno-intel-gpu-top": {
     "url": "https://github.com/PeterSuh-Q3/syno-intel-gpu-top/releases/download/v0.1.6/syno-intel-gpu-top-0.1.6-x86_64.spk",
     "version": "0.1.6",
@@ -49,28 +44,68 @@
     "version": "2.0.8",
     "missing_icon": false
   },
+  "syno-nvidia-gpu-monitor": {
+    "url": "https://github.com/PeterSuh-Q3/syno-gpu-monitor/releases/download/gpu-monitors-2026.10.18/syno-nvidia-gpu-monitor-0.6.7-x86_64.spk",
+    "version": "0.6.7",
+    "missing_icon": false
+  },
   "syno-nvidia-container-runtime": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-container-runtime-1.19.1-5-x86_64.spk",
-    "version": "1.19.1-5",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-container-runtime-1.19.1-8-x86_64.spk",
+    "version": "1.19.1-8",
     "missing_icon": false
   },
   "syno-nvidia-driver-kver4-dsm70": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm70-550.163.01-4-dsm7.0-7.1.spk",
-    "version": "550.163.01-4",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm70-550.163.01-6-dsm7.0-7.1.spk",
+    "version": "550.163.01-6",
     "missing_icon": false
   },
   "syno-nvidia-driver-kver4-dsm72": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm72-550.163.01-4-dsm7.2-7.4.spk",
-    "version": "550.163.01-4",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver4-dsm72-550.163.01-6-dsm7.2-7.4.spk",
+    "version": "550.163.01-6",
     "missing_icon": false
   },
-  "syno-nvidia-driver-kver5": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595.99.02-6.spk",
-    "version": "595.99.02-6",
+  "syno-nvidia-ffmpeg7-550": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg7-550-550.163.01-2-x86_64.spk",
+    "version": "550.163.01-2",
     "missing_icon": false
   },
-  "syno-nvidia-ffmpeg": {
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg-595.99.02-3-x86_64.spk",
+  "syno-nvidia-ffmpeg7-580": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg7-580-580.173.02-2-x86_64.spk",
+    "version": "580.173.02-2",
+    "missing_icon": false
+  },
+  "syno-nvidia-ffmpeg7-595": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg7-595-595.99.02-2-x86_64.spk",
+    "version": "595.99.02-2",
+    "missing_icon": false
+  },
+  "syno-nvidia-ffmpeg8-580": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg8-580-580.173.02-3-x86_64.spk",
+    "version": "580.173.02-3",
+    "missing_icon": false
+  },
+  "syno-nvidia-ffmpeg8-595": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-ffmpeg8-595-595.99.02-2-x86_64.spk",
+    "version": "595.99.02-2",
+    "missing_icon": false
+  },
+  "syno-nvidia-driver-kver5-580-open": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-580-open-580.173.02-4.spk",
+    "version": "580.173.02-4",
+    "missing_icon": false
+  },
+  "syno-nvidia-driver-kver5-580-proprietary": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-580-proprietary-580.173.02-6.spk",
+    "version": "580.173.02-6",
+    "missing_icon": false
+  },
+  "syno-nvidia-driver-kver5-595-open": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595-open-595.99.02-3.spk",
+    "version": "595.99.02-3",
+    "missing_icon": false
+  },
+  "syno-nvidia-driver-kver5-595-proprietary": {
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595-proprietary-595.99.02-3.spk",
     "version": "595.99.02-3",
     "missing_icon": false
   }
