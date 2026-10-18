@@ -15,8 +15,8 @@
     "missing_icon": false
   },
   "syno-amdgpu-runtime": {
-    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver/releases/download/v0.5.3/syno-amdgpu-runtime-0.5.3-7.4-x86_64-kernel4.4.x.spk",
-    "version": "0.5.3",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver/releases/download/v0.5.4/syno-amdgpu-runtime-0.5.4-7.4-x86_64-kernel4.4.x.spk",
+    "version": "0.5.4",
     "missing_icon": false
   },
   "syno-amdgpu-top": {

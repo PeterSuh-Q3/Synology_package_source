@@ -21,7 +21,7 @@
       "install_dep_packages": ""
     },
     "md5": "82225f7f7be2e04c97148a1ada2c4089",
-    "download_count": 29
+    "download_count": 46
   },
   {
     "repo": "ChangePanelSize",
@@ -228,7 +228,7 @@
       "displayname": "MSHELL Manager",
       "install_dep_packages": ""
     },
-    "download_count": 308
+    "download_count": 1014
   },
   {
     "repo": "mshell-manager-rel",
@@ -412,7 +412,7 @@
       "displayname": "MSHELL Manager",
       "install_dep_packages": ""
     },
-    "download_count": 526
+    "download_count": 527
   },
   {
     "repo": "mshell-manager-rel",
@@ -527,7 +527,7 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 6
+    "download_count": 7
   },
   {
     "repo": "syno-amdgpu-driver",
@@ -550,7 +550,7 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 99
+    "download_count": 130
   },
   {
     "repo": "syno-amdgpu-driver",
@@ -1158,7 +1158,7 @@
       "displayname": "Syno Smart Info",
       "install_dep_packages": ""
     },
-    "download_count": 5250
+    "download_count": 5929
   },
   {
     "repo": "SynoSmartInfo",
@@ -1181,7 +1181,7 @@
       "displayname": "Syno Smart Info",
       "install_dep_packages": ""
     },
-    "download_count": 294
+    "download_count": 295
   },
   {
     "repo": "SynoSmartInfo",
@@ -1204,7 +1204,7 @@
       "displayname": "Syno Smart Info",
       "install_dep_packages": ""
     },
-    "download_count": 11
+    "download_count": 12
   },
   {
     "repo": "SynoSmartInfo",
@@ -1250,7 +1250,7 @@
       "displayname": "Syno Smart Info",
       "install_dep_packages": ""
     },
-    "download_count": 968
+    "download_count": 971
   },
   {
     "repo": "SynoSmartInfo",
@@ -1365,7 +1365,7 @@
       "displayname": "Syno Smart Info",
       "install_dep_packages": ""
     },
-    "download_count": 479
+    "download_count": 480
   },
   {
     "repo": "SynoSmartInfo",
@@ -1618,7 +1618,7 @@
       "displayname": "Syno Smart Info",
       "install_dep_packages": ""
     },
-    "download_count": 12
+    "download_count": 13
   },
   {
     "repo": "SynoSmartInfo",
@@ -2908,7 +2908,7 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 2
+    "download_count": 8
   },
   {
     "repo": "syno-intel-gpu-top",
@@ -2931,7 +2931,7 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 12
+    "download_count": 43
   },
   {
     "repo": "ScriptNotify",
@@ -2954,7 +2954,7 @@
       "displayname": "Sample Package",
       "install_dep_packages": ""
     },
-    "download_count": 1
+    "download_count": 2
   },
   {
     "repo": "syno-gpu-monitor",
@@ -3282,5 +3282,51 @@
       "install_dep_packages": ""
     },
     "download_count": 0
+  },
+  {
+    "repo": "syno-amdgpu-driver",
+    "tag": "v0.5.4",
+    "published_at": "2026-10-17T14:52:58Z",
+    "name": "syno-amdgpu-runtime-0.5.4-7.4-x86_64-kernel4.4.x.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver/releases/download/v0.5.4/syno-amdgpu-runtime-0.5.4-7.4-x86_64-kernel4.4.x.spk",
+    "size": 217190400,
+    "info": {
+      "package": "syno-amdgpu-runtime",
+      "version": "0.5.4",
+      "displayname": "Synology AMD+i915 Dual DRM and Runtime",
+      "description": "Platform-migration-capable AMD+i915 Dual DRM and Runtime (DSM 7.4, kernel 4.4.302; AMD VA-API/Vulkan, experimental). Bundled platforms: apollolake broadwell broadwellnk broadwellnkv2 broadwellntbap denverton geminilake purley r1000 v1000. Detects platform/kernel changes, validates the selected module ABI, and stages the matching DRM bundle; reboot when DRM modules are already loaded. No Jellyfin/Plex auto-integration.",
+      "arch": "apollolake broadwell broadwellnk broadwellnkv2 broadwellntbap denverton geminilake purley r1000 v1000",
+      "os_min_ver": "7.4-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    },
+    "download_count": 3
+  },
+  {
+    "repo": "syno-amdgpu-driver",
+    "tag": "v0.5.4",
+    "published_at": "2026-10-17T14:52:58Z",
+    "name": "syno-amdgpu-runtime-0.5.4-7.4-x86_64-kernel5.10.55.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver/releases/download/v0.5.4/syno-amdgpu-runtime-0.5.4-7.4-x86_64-kernel5.10.55.spk",
+    "size": 198287360,
+    "info": {
+      "package": "syno-amdgpu-runtime",
+      "version": "0.5.4",
+      "displayname": "Synology AMD+i915 Dual DRM and Runtime",
+      "description": "Platform-migration-capable AMD+i915 Dual DRM and Runtime (DSM 7.4, kernel 5.10.55; AMD VA-API/Vulkan). Bundled platforms: epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk. Detects platform/kernel changes, validates the selected module ABI, and stages the matching DRM bundle; reboot if DRM modules are already loaded.",
+      "arch": "epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk",
+      "os_min_ver": "7.4-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno-amdgpu-driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    },
+    "download_count": 8
   }
 ]
