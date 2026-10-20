@@ -22,8 +22,8 @@ Synology's [Package Center guide](https://kb.synology.com/en-us/DSM/help/DSM/Pkg
 - [Source code and deployment instructions](https://github.com/PeterSuh-Q3/Synology_package_source)
 
 The service filters package metadata by architecture and DSM version. A package is shown only when its SPK metadata indicates compatibility. Some SPKs do not include package icons; the feed uses embedded icons when available.
-Download counts are GitHub release asset totals, refreshed by the six-hour release sync. They count downloads per SPK file, not unique users or completed installations.
+Download counts are GitHub release asset totals, refreshed by a six-hour fallback sync and release webhooks. They count downloads per SPK file, not unique users or completed installations. The NVIDIA package-ID allowlist keeps retired package IDs out of the feed while newer versions of approved IDs are discovered automatically. For assets added to an already-published release, the upload process calls the signed refresh callback because GitHub has no dedicated asset-upload webhook event.
 
 ## Run the feed
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for the Synology NAS Docker and reverse proxy setup. The service is a small Python HTTP server with no third-party Python dependencies.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the Synology NAS Docker and reverse proxy setup, webhook configuration, and the post-upload callback needed when adding assets to an already-published GitHub release. The service is a small Python HTTP server with no third-party Python dependencies.

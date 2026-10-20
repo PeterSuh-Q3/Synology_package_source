@@ -1,15 +1,15 @@
 {
-  "syno-nvidia-container-runtime": {"version": "1.19.1-8", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-driver-kver4-dsm70": {"version": "550.163.01-6", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-driver-kver4-dsm72": {"version": "550.163.01-6", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-driver-kver5-580-open": {"version": "580.173.02-4", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-driver-kver5-580-proprietary": {"version": "580.173.02-6", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-driver-kver5-595-open": {"version": "595.99.02-3", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-driver-kver5-595-proprietary": {"version": "595.99.02-3", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-ffmpeg7-550": {"version": "550.163.01-2", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-ffmpeg7-580": {"version": "580.173.02-2", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-ffmpeg7-595": {"version": "595.99.02-2", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-ffmpeg8-580": {"version": "580.173.02-3", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-ffmpeg8-595": {"version": "595.99.02-2", "repo": "syno_nvidia_driver"},
-  "syno-nvidia-gpu-monitor": {"version": "0.6.7", "repo": "syno-gpu-monitor"}
+  "syno-nvidia-container-runtime": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-driver-kver4-dsm70": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-driver-kver4-dsm72": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-driver-kver5-580-open": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-driver-kver5-580-proprietary": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-driver-kver5-595-open": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-driver-kver5-595-proprietary": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-ffmpeg7-550": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-ffmpeg7-580": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-ffmpeg7-595": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-ffmpeg8-580": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-ffmpeg8-595": {"repo": "syno_nvidia_driver"},
+  "syno-nvidia-gpu-monitor": {"repo": "syno-gpu-monitor"}
 }

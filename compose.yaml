@@ -6,5 +6,7 @@ services:
     ports:
       - "127.0.0.1:8765:8765"
       - "127.0.0.1:8766:8765"
+    environment:
+      GITHUB_WEBHOOK_SECRET: ${GITHUB_WEBHOOK_SECRET:-}
     volumes:
       - ./data:/app/data

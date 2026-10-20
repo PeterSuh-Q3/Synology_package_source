@@ -3,6 +3,7 @@
 
 import json
 import hashlib
+import hmac
 import os
 import re
 import threading
@@ -10,6 +11,8 @@ import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, quote, urlsplit
+
+from tools.sync_releases import REPOS as TRACKED_REPOS
 
 
 ROOT = Path(__file__).resolve().parent
@@ -19,6 +22,13 @@ ASSET_ROOT = ROOT / "assets"
 LANDING_PAGE = ROOT / "landing.html"
 CATALOG_PAGE = ROOT / "catalog.html"
 EXCLUDED_PACKAGES = {"Samplepackage"}  # ScriptNotify's example package.
+GITHUB_OWNER = "PeterSuh-Q3"
+WEBHOOK_REPOS = {
+    f"{GITHUB_OWNER}/{repo}" for repo in TRACKED_REPOS
+}
+MAX_WEBHOOK_BYTES = 64 * 1024
+sync_requested = threading.Event()
+sync_worker_lock = threading.Lock()
 X64_PLATFORMS = {
     "apollolake", "avoton", "braswell", "broadwell", "broadwellnk",
     "broadwellnkv2", "broadwellntbap", "bromolow", "denverton",
@@ -126,7 +136,8 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(status)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(data)))
-        self.send_header("Cache-Control", "public, max-age=300")
+        cache_control = "no-store" if self.command == "POST" else "public, max-age=300"
+        self.send_header("Cache-Control", cache_control)
         self.end_headers()
         self.wfile.write(data)
 
@@ -189,17 +200,76 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_body(503, "landing page unavailable\n", "text/plain; charset=utf-8")
         return self.send_body(200, body, "text/html; charset=utf-8")
 
+    def do_POST(self):
+        parsed = urlsplit(self.path)
+        if parsed.path != "/webhook/github":
+            return self.send_body(404, "not found\n", "text/plain; charset=utf-8")
+        secret = os.environ.get("GITHUB_WEBHOOK_SECRET", "")
+        if not secret:
+            return self.send_body(503, "webhook is not configured\n", "text/plain; charset=utf-8")
+        try:
+            length = int(self.headers.get("Content-Length", "0"))
+        except ValueError:
+            return self.send_body(400, "invalid content length\n", "text/plain; charset=utf-8")
+        if length <= 0 or length > MAX_WEBHOOK_BYTES:
+            return self.send_body(413, "invalid webhook payload size\n", "text/plain; charset=utf-8")
+        body = self.rfile.read(length)
+        signature = self.headers.get("X-Hub-Signature-256", "")
+        expected = "sha256=" + hmac.new(secret.encode(), body, hashlib.sha256).hexdigest()
+        if not hmac.compare_digest(signature, expected):
+            return self.send_body(401, "invalid webhook signature\n", "text/plain; charset=utf-8")
+        try:
+            payload = json.loads(body)
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            return self.send_body(400, "invalid JSON payload\n", "text/plain; charset=utf-8")
+        if not isinstance(payload, dict) or not isinstance(payload.get("repository"), dict):
+            return self.send_body(400, "invalid GitHub payload shape\n", "text/plain; charset=utf-8")
+        repository = payload["repository"].get("full_name", "")
+        event = self.headers.get("X-GitHub-Event", "")
+        action = payload.get("action", "")
+        if repository not in WEBHOOK_REPOS:
+            return self.send_body(403, "repository is not tracked\n", "text/plain; charset=utf-8")
+        if event == "release":
+            if action not in {"published", "released", "edited", "prereleased"}:
+                return self.send_body(202, "ignored event\n", "text/plain; charset=utf-8")
+        elif event != "release_asset_upload":
+            return self.send_body(202, "ignored event\n", "text/plain; charset=utf-8")
+        queue_release_sync()
+        return self.send_body(202, "release sync queued\n", "text/plain; charset=utf-8")
+
 
 def periodic_sync():
     while True:
-        try:
-            from tools.sync_releases import sync
-            from tools.sync_icons import sync as sync_icons
-            sync()
-            sync_icons()
-        except Exception as exc:
-            print(f"release sync failed: {exc}", flush=True)
+        queue_release_sync()
         time.sleep(6 * 3600)
+
+
+def sync_catalog_once():
+    from tools.sync_releases import sync
+    from tools.sync_icons import sync as sync_icons
+    sync()
+    sync_icons()
+
+
+def _sync_worker():
+    try:
+        while sync_requested.wait():
+            sync_requested.clear()
+            try:
+                sync_catalog_once()
+            except Exception as exc:
+                print(f"release sync failed: {exc}", flush=True)
+    finally:
+        sync_worker_lock.release()
+        # Close the race where a request arrived as the worker was exiting.
+        if sync_requested.is_set():
+            queue_release_sync()
+
+
+def queue_release_sync():
+    sync_requested.set()
+    if sync_worker_lock.acquire(blocking=False):
+        threading.Thread(target=_sync_worker, daemon=True).start()
 
 
 if __name__ == "__main__":

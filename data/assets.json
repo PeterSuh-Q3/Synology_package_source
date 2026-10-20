@@ -2980,7 +2980,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 12,
+    "github_asset_id": 652835901,
+    "asset_updated_at": "2026-10-18T07:42:14Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3006,7 +3008,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 9,
+    "github_asset_id": 652829128,
+    "asset_updated_at": "2026-10-18T07:39:04Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3031,7 +3035,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 3,
+    "github_asset_id": 652829121,
+    "asset_updated_at": "2026-10-18T07:40:29Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3056,7 +3062,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 19,
+    "github_asset_id": 652829122,
+    "asset_updated_at": "2026-10-18T07:40:28Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3081,7 +3089,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 6,
+    "github_asset_id": 652831626,
+    "asset_updated_at": "2026-10-18T07:40:08Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3106,7 +3116,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 3,
+    "github_asset_id": 652831804,
+    "asset_updated_at": "2026-10-18T07:40:15Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3131,7 +3143,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 3,
+    "github_asset_id": 652831998,
+    "asset_updated_at": "2026-10-18T07:40:22Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3156,7 +3170,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 7,
+    "github_asset_id": 652832288,
+    "asset_updated_at": "2026-10-18T07:40:29Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3181,7 +3197,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 4,
+    "github_asset_id": 652832367,
+    "asset_updated_at": "2026-10-18T07:40:31Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3206,7 +3224,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 4,
+    "github_asset_id": 652829120,
+    "asset_updated_at": "2026-10-18T07:40:03Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3231,7 +3251,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
+    "download_count": 8,
+    "github_asset_id": 652829119,
+    "asset_updated_at": "2026-10-18T07:40:56Z"
   },
   {
     "repo": "syno_nvidia_driver",
@@ -3256,32 +3278,9 @@
       "startable": "no",
       "install_dep_packages": ""
     },
-    "download_count": 0
-  },
-  {
-    "repo": "syno_nvidia_driver",
-    "tag": "spk",
-    "published_at": "2026-08-19T15:29:28Z",
-    "name": "syno-nvidia-driver-kver5-595-proprietary-595.99.02-3.spk",
-    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595-proprietary-595.99.02-3.spk",
-    "size": 848005632,
-    "info": {
-      "package": "syno-nvidia-driver-kver5-595-proprietary",
-      "version": "595.99.02-3",
-      "displayname": "Synology NVIDIA Driver 595 proprietary",
-      "description": "NVIDIA 595.99.02 proprietary driver; CUDA API 13.2; supports Turing and newer GPUs listed in the bundled compatibility table; kernel 5.10.55. Bundled platforms: epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk. This proprietary flavor has a GPU compatibility pre-check. Selects and validates the module set for the detected platform at startup. Reboot after migration if NVIDIA modules are already loaded.",
-      "description_enu": "NVIDIA 595.99.02 proprietary driver; CUDA API 13.2; supports Turing and newer GPUs listed in the bundled compatibility table; kernel 5.10.55. Bundled platforms: epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk. This proprietary flavor has a GPU compatibility pre-check. Selects and validates the module set for the detected platform at startup. Reboot after migration if NVIDIA modules are already loaded.",
-      "description_krn": "NVIDIA 595.99.02 독점 드라이버입니다. CUDA API 13.2를 제공하며, 번들 호환성 표에 포함된 Turing 이상 GPU를 지원합니다. 커널 5.10.55용이며 포함 플랫폼은 epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk입니다. 독점 버전은 GPU 호환성 사전 검사를 수행합니다. 시작 시 감지된 플랫폼에 맞는 모듈을 선택하고 ABI를 확인합니다. 마이그레이션 후 NVIDIA 모듈이 이미 적재되어 있다면 재부팅하십시오.",
-      "arch": "epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk",
-      "os_min_ver": "7.2-00000",
-      "maintainer": "PeterSuh-Q3",
-      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
-      "distributor": "PeterSuh-Q3",
-      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
-      "startable": "no",
-      "install_dep_packages": ""
-    },
-    "download_count": 0
+    "download_count": 4,
+    "github_asset_id": 652829278,
+    "asset_updated_at": "2026-10-18T07:39:34Z"
   },
   {
     "repo": "syno-amdgpu-driver",
@@ -3328,5 +3327,32 @@
       "install_dep_packages": ""
     },
     "download_count": 8
+  },
+  {
+    "repo": "syno_nvidia_driver",
+    "tag": "spk",
+    "published_at": "2026-08-19T15:29:28Z",
+    "name": "syno-nvidia-driver-kver5-595-proprietary-595.99.02-4.spk",
+    "url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver/releases/download/spk/syno-nvidia-driver-kver5-595-proprietary-595.99.02-4.spk",
+    "size": 875978752,
+    "info": {
+      "package": "syno-nvidia-driver-kver5-595-proprietary",
+      "version": "595.99.02-4",
+      "displayname": "Synology NVIDIA Driver 595 proprietary",
+      "description": "NVIDIA 595.99.02 proprietary driver; CUDA API 13.2; supports Turing and newer GPUs listed in the bundled compatibility table; kernel 5.10.55. Bundled platforms: epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk. This flavor performs a GPU compatibility pre-check, enables DRM/KMS modesetting (modeset=1), and includes a matching quad-DRM provider for every bundled platform. If Plex is running during installation or startup, it is restarted once after NVIDIA is ready to improve GPU detection, and the result is reported. Reboot after migration if NVIDIA modules are already loaded.",
+      "description_enu": "NVIDIA 595.99.02 proprietary driver; CUDA API 13.2; supports Turing and newer GPUs listed in the bundled compatibility table; kernel 5.10.55. Bundled platforms: epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk. This flavor performs a GPU compatibility pre-check, enables DRM/KMS modesetting (modeset=1), and includes a matching quad-DRM provider for every bundled platform. If Plex is running during installation or startup, it is restarted once after NVIDIA is ready to improve GPU detection, and the result is reported. Reboot after migration if NVIDIA modules are already loaded.",
+      "description_krn": "NVIDIA 595.99.02 독점 드라이버입니다. CUDA API 13.2를 제공하며, 번들 호환성 표에 포함된 Turing 이상 GPU를 지원합니다. 커널 5.10.55용이며 포함 플랫폼은 epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk입니다. GPU 호환성 사전 검사를 수행하고 DRM/KMS 모드 설정(modeset=1)을 활성화하며, 모든 포함 플랫폼에 일치하는 quad-DRM provider를 포함합니다. 설치 또는 시작 시 Plex가 실행 중이면 NVIDIA 준비 후 GPU 감지를 돕기 위해 한 번 재시작하고 결과를 안내합니다. 마이그레이션 후 NVIDIA 모듈이 이미 적재되어 있다면 재부팅하십시오.",
+      "arch": "epyc7002 epyc7003 geminilakenk icelaked r1000nk v1000nk",
+      "os_min_ver": "7.2-00000",
+      "maintainer": "PeterSuh-Q3",
+      "maintainer_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "distributor": "PeterSuh-Q3",
+      "distributor_url": "https://github.com/PeterSuh-Q3/syno_nvidia_driver",
+      "startable": "no",
+      "install_dep_packages": ""
+    },
+    "download_count": 2,
+    "github_asset_id": 656786229,
+    "asset_updated_at": "2026-10-19T16:27:49Z"
   }
 ]
